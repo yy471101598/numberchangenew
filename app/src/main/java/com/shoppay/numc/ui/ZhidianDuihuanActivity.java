@@ -35,6 +35,7 @@ import com.shoppay.numc.card.ReadCardOptHander;
 import com.shoppay.numc.db.DBAdapter;
 import com.shoppay.numc.dialog.CurrChoseDialog;
 import com.shoppay.numc.dialog.PwdDialog;
+import com.shoppay.numc.http.ContansUtils;
 import com.shoppay.numc.http.InterfaceBack;
 import com.shoppay.numc.modle.ImpObtainVipMsg;
 import com.shoppay.numc.modle.ImpObtainZDDHCurrency;
@@ -45,6 +46,7 @@ import com.shoppay.numc.modle.ImpZDDuihuan;
 import com.shoppay.numc.tools.ActivityStack;
 import com.shoppay.numc.tools.CommonUtils;
 import com.shoppay.numc.tools.DialogUtil;
+import com.shoppay.numc.tools.LogUtils;
 import com.shoppay.numc.tools.NoDoubleClickListener;
 import com.shoppay.numc.tools.PreferenceHelper;
 import com.shoppay.numc.tools.ToastUtils;
@@ -153,6 +155,7 @@ public class ZhidianDuihuanActivity extends BaseActivity {
     private List<LipinMsg> list = new ArrayList<>();
     private ZhidianDuihuanAdapter adapter;
     private static final int CAMERA_PERMISSIONS_REQUEST_CODE = 0x03;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -547,7 +550,7 @@ public class ZhidianDuihuanActivity extends BaseActivity {
                                         recharge.zdDuihuan(ZhidianDuihuanActivity.this, dialog, rechargeid, vipid, pwd, currid, sb.toString(), new InterfaceBack() {
                                             @Override
                                             public void onResponse(Object response) {
-                                               finish();
+                                                finish();
 
                                             }
 
@@ -579,6 +582,7 @@ public class ZhidianDuihuanActivity extends BaseActivity {
             }
         });
     }
+
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -599,6 +603,7 @@ public class ZhidianDuihuanActivity extends BaseActivity {
             }
         }
     }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);

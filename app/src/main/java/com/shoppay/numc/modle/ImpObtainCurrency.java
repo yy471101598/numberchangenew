@@ -1,21 +1,15 @@
 package com.shoppay.numc.modle;
 
 import android.app.Activity;
-import android.app.Dialog;
 import android.widget.Toast;
 
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
-import com.loopj.android.http.RequestParams;
 import com.shoppay.numc.R;
 import com.shoppay.numc.http.ContansUtils;
 import com.shoppay.numc.http.InterfaceBack;
 import com.shoppay.numc.tools.LogUtils;
-import com.shoppay.numc.tools.MD5Util;
-import com.shoppay.numc.tools.PreferenceHelper;
-import com.shoppay.numc.tools.ToastUtils;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import cz.msebera.android.httpclient.Header;
@@ -47,7 +41,7 @@ public class ImpObtainCurrency {
             @Override
             public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
                 back.onErrorResponse("");
-                Toast.makeText(ac, ac.getResources().getString(R.string.currno), Toast.LENGTH_SHORT).show();
+//                Toast.makeText(ac, ac.getResources().getString(R.string.currno), Toast.LENGTH_SHORT).show();
             }
         });
     }

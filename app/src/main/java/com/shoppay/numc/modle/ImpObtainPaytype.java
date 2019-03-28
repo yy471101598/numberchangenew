@@ -9,8 +9,6 @@ import com.shoppay.numc.R;
 import com.shoppay.numc.http.ContansUtils;
 import com.shoppay.numc.http.InterfaceBack;
 import com.shoppay.numc.tools.LogUtils;
-import com.shoppay.numc.tools.PreferenceHelper;
-import com.shoppay.numc.tools.ToastUtils;
 
 import org.json.JSONObject;
 
@@ -43,7 +41,7 @@ public class ImpObtainPaytype {
             @Override
             public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
                 back.onErrorResponse("");
-                Toast.makeText(ac, ac.getResources().getString(R.string.paytypeno), Toast.LENGTH_SHORT).show();
+//                Toast.makeText(ac, ac.getResources().getString(R.string.paytypeno), Toast.LENGTH_SHORT).show();
             }
         });
     }

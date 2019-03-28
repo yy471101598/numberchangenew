@@ -78,6 +78,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         ac = this;
         ActivityStack.create().addActivity(ac);
+        ContansUtils.BASE_URL = "http://mc.bankboss.net/";
         initView();
         if (PreferenceHelper.readBoolean(ac, "shoppay", "remember", false)) {
             cb.setChecked(true);
@@ -235,6 +236,7 @@ public class LoginActivity extends AppCompatActivity {
         final PersistentCookieStore myCookieStore = new PersistentCookieStore(this);
         client.setCookieStore(myCookieStore);
         RequestParams params = new RequestParams();
+        //13552825726 123456
         params.put("UserName", et_account.getText().toString());
         params.put("PassWord", et_pwd.getText().toString());
         JSONObject jso = new JSONObject();
@@ -248,6 +250,7 @@ public class LoginActivity extends AppCompatActivity {
         LogUtils.d("xxjson", jso.toString());
         params.put("HMAC", MD5Util.md5(jso.toString() + "bankbosscc").toUpperCase());
         LogUtils.d("xxmap", params.toString());
+        LogUtils.d("xxurl", ContansUtils.BASE_URL + "pos/login.ashx");
         client.post(ContansUtils.BASE_URL + "pos/login.ashx", params, new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
@@ -294,7 +297,8 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
                 dialog.dismiss();
-                Toast.makeText(ac, getResources().getString(R.string.loginfalse), Toast.LENGTH_SHORT).show();
+                ContansUtils.BASE_URL = "http://cnmc.bankboss.net/";
+                login();
             }
         });
     }

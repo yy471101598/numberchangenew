@@ -4,7 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/base_library_pullToRefresh/base_library_pullToRefresh.iml" filepath="$PROJECT_DIR$/base_library_pullToRefresh/base_library_pullToRefresh.iml" />
-      <module fileurl="file://$PROJECT_DIR$/numberchange.iml" filepath="$PROJECT_DIR$/numberchange.iml" />
+      <module fileurl="file://$PROJECT_DIR$/numberchangenew.iml" filepath="$PROJECT_DIR$/numberchangenew.iml" />
     </modules>
   </component>
 </project>
