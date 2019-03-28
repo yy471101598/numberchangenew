@@ -32,9 +32,11 @@ public class ImpObtainHome {
 //        client.setCookieStore(myCookieStore);
         RequestParams params = new RequestParams();
         params.put("UserID", PreferenceHelper.readInt(ac, "shoppay", "userid", 0));
+        params.put("type",ContansUtils.BASE_URL.equals("http://mc.bankboss.net/")?"1":"2");
         JSONObject jso = new JSONObject();
         try {
             jso.put("UserID", PreferenceHelper.readInt(ac, "shoppay", "userid", 0));
+            jso.put("type",ContansUtils.BASE_URL.equals("http://mc.bankboss.net/")?"1":"2");
         } catch (JSONException e) {
             e.printStackTrace();
         }
